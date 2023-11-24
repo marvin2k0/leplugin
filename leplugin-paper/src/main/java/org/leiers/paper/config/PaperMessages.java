@@ -20,7 +20,7 @@ public class PaperMessages implements Messages<Component> {
 
     @Override
     public Component get(String path) {
-        return get(path, false);
+        return get(path, true);
     }
 
     @Override
@@ -32,8 +32,10 @@ public class PaperMessages implements Messages<Component> {
         else
             message = message.trim();
 
-        return (usePrefix ? getPrefix().append(Component.text(" ")) : Component.text().asComponent())
-                .append(mm.deserialize(message));
+        if (usePrefix)
+            return getPrefix().append(mm.deserialize(message));
+
+        return mm.deserialize(message);
     }
 
     @Override
