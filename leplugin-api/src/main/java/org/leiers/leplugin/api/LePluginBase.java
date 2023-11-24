@@ -18,6 +18,7 @@ public abstract class LePluginBase extends JavaPlugin {
         this.prepareConfig();
         this.createMessagesConfig();
         this.setup();
+        this.hideBanner();
         this.loading();
     }
 
