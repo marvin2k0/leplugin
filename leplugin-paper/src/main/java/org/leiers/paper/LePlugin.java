@@ -9,7 +9,7 @@ public class LePlugin extends LePluginBase {
     private final PaperMessages textFormatter;
 
     public LePlugin() {
-        this.textFormatter = new PaperMessages(getMessagesConfig());
+        this.textFormatter = new PaperMessages(this, getMessagesConfig());
     }
 
     @Override
