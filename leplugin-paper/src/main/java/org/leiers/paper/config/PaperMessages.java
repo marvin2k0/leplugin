@@ -32,8 +32,7 @@ public class PaperMessages implements Messages<Component> {
         else
             message = message.trim();
 
-        return (usePrefix ? getPrefix() : Component.text().asComponent())
-                .append(Component.text(" "))
+        return (usePrefix ? getPrefix().append(Component.text(" ")) : Component.text().asComponent())
                 .append(mm.deserialize(message));
     }
 
