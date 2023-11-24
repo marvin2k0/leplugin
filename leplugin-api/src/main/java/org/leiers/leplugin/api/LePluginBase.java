@@ -17,6 +17,7 @@ public abstract class LePluginBase extends JavaPlugin {
     public final void onLoad() {
         this.prepareConfig();
         this.createMessagesConfig();
+        this.setup();
         this.loading();
     }
 
@@ -79,6 +80,9 @@ public abstract class LePluginBase extends JavaPlugin {
 
     public FileConfiguration getMessagesConfig() {
         return this.messagesConfig;
+    }
+
+    protected void setup() {
     }
 
     public void loading() {

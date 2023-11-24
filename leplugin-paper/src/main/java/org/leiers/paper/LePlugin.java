@@ -6,9 +6,9 @@ import org.leiers.leplugin.api.config.Messages;
 import org.leiers.paper.config.PaperMessages;
 
 public class LePlugin extends LePluginBase {
-    private final PaperMessages textFormatter;
+    private PaperMessages textFormatter;
 
-    public LePlugin() {
+    protected final void setup() {
         this.textFormatter = new PaperMessages(this, getMessagesConfig());
     }
 
