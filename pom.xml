@@ -10,7 +10,15 @@
     <packaging>pom</packaging>
     <modules>
         <module>leplugin-api</module>
+        <module>leplugin-paper</module>
     </modules>
+
+    <distributionManagement>
+        <repository>
+            <id>leiers</id>
+            <url>https://repo.leiers.org/releases</url>
+        </repository>
+    </distributionManagement>
 
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
