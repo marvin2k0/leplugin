@@ -12,8 +12,4 @@ public abstract class CommandBase extends Command {
         super(name, description, usageMessage, aliases);
         this.plugin = plugin;
     }
-
-    public LePluginBase getPlugin() {
-        return plugin;
-    }
 }

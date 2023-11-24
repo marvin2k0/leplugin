@@ -13,7 +13,7 @@ public abstract class LePluginCommand extends CommandBase {
 
         Bukkit.getCommandMap().register(
                 getLabel(),
-                getPlugin().getName(),
+                plugin.getName(),
                 this
         );
     }
