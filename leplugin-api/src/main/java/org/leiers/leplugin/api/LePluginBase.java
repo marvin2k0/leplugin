@@ -1,9 +1,9 @@
 package org.leiers.leplugin.api;
 
 import org.bukkit.ChatColor;
-import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.plugin.java.JavaPlugin;
+import org.leiers.leplugin.api.config.Config;
 import org.leiers.leplugin.api.config.Messages;
 
 import java.io.File;
@@ -11,7 +11,7 @@ import java.util.List;
 
 public abstract class LePluginBase extends JavaPlugin {
     private boolean showBanner = true;
-    private FileConfiguration messagesConfig;
+    private Config messagesConfig;
 
     @Override
     public final void onLoad() {
@@ -61,10 +61,12 @@ public abstract class LePluginBase extends JavaPlugin {
     }
 
     private void createMessagesConfig() {
-        if (getResource("messages.yml") != null && !new File(getDataFolder(), "messages.yml").exists())
+        final File messagesFile = new File(getDataFolder(), "messages.yml");
+
+        if (getResource("messages.yml") != null && !messagesFile.exists())
             saveResource("messages.yml", false);
 
-        this.messagesConfig = YamlConfiguration.loadConfiguration(new File(getDataFolder(), "messages.yml"));
+        this.messagesConfig = new Config(YamlConfiguration.loadConfiguration(messagesFile), messagesFile);
     }
 
     private void sendBanner() {
@@ -79,7 +81,7 @@ public abstract class LePluginBase extends JavaPlugin {
 
     public abstract Messages getText();
 
-    public FileConfiguration getMessagesConfig() {
+    public Config getMessagesConfig() {
         return this.messagesConfig;
     }
 

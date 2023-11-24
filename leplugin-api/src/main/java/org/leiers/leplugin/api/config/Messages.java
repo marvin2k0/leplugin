@@ -1,7 +1,5 @@
 package org.leiers.leplugin.api.config;
 
-import org.bukkit.configuration.file.FileConfiguration;
-
 public interface Messages<T> {
     T get(String path);
 
@@ -9,5 +7,5 @@ public interface Messages<T> {
 
     T getPrefix();
 
-    FileConfiguration getConfig();
+    Config getConfig();
 }
