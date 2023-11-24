@@ -1,9 +1,9 @@
 package org.leiers.paper.config;
 
 import net.kyori.adventure.text.Component;
-import org.leiers.leplugin.api.config.TextFormatter;
+import org.leiers.leplugin.api.config.Messages;
 
-public class PaperTextFormatter implements TextFormatter<Component> {
+public class PaperMessages implements Messages<Component> {
     @Override
     public Component get(String path) {
         return null;

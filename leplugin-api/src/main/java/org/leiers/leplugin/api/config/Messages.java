@@ -1,6 +1,6 @@
 package org.leiers.leplugin.api.config;
 
-public interface TextFormatter<T> {
+public interface Messages<T> {
     T get(String path);
 
     T get(String path, boolean usePrefix);

@@ -2,18 +2,18 @@ package org.leiers.paper;
 
 import net.kyori.adventure.text.Component;
 import org.leiers.leplugin.api.LePluginBase;
-import org.leiers.leplugin.api.config.TextFormatter;
-import org.leiers.paper.config.PaperTextFormatter;
+import org.leiers.leplugin.api.config.Messages;
+import org.leiers.paper.config.PaperMessages;
 
 public class LePlugin extends LePluginBase {
-    private final PaperTextFormatter textFormatter;
+    private final PaperMessages textFormatter;
 
     public LePlugin() {
-        this.textFormatter = new PaperTextFormatter();
+        this.textFormatter = new PaperMessages();
     }
 
     @Override
-    public TextFormatter<Component> getText() {
+    public Messages<Component> getText() {
         return textFormatter;
     }
 }

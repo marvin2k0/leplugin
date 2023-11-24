@@ -2,7 +2,7 @@ package org.leiers.leplugin.api;
 
 import org.bukkit.ChatColor;
 import org.bukkit.plugin.java.JavaPlugin;
-import org.leiers.leplugin.api.config.TextFormatter;
+import org.leiers.leplugin.api.config.Messages;
 
 import java.io.File;
 import java.util.List;
@@ -70,7 +70,7 @@ public abstract class LePluginBase extends JavaPlugin {
         getServer().getConsoleSender().sendMessage(ChatColor.GOLD + "          Visit https://leiers.org/leplugin");
     }
 
-    public abstract TextFormatter getText();
+    public abstract Messages getText();
 
     public void loading() {
     }
