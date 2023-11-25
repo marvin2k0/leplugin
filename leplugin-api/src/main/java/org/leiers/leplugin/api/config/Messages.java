@@ -5,7 +5,7 @@ public interface Messages<T> {
 
     T get(String path, boolean usePrefix);
 
-    T getPrefix();
+    String getPrefix();
 
     Config getConfig();
 }

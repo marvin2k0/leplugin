@@ -12,12 +12,11 @@ public class PaperMessages implements Messages<Component> {
     private static final MiniMessage mm = MiniMessage.miniMessage();
 
     private final Config config;
-    private final Component prefix;
+    private final String prefix;
 
     public PaperMessages(LePluginBase plugin, Config config) {
         this.config = config;
-        this.prefix = (config.getFileConfiguration().isSet("prefix") ? get("prefix", false) : mm.deserialize("<blue>" + plugin.getName().trim()))
-                .append(Component.text(" "));
+        this.prefix = (config.getFileConfiguration().isSet("prefix") ? getConfig().getFileConfiguration().getString("prefix") : "<blue>" + plugin.getName().trim());
 
         config.getFileConfiguration().options().setHeader(List.of(
                 " ",
@@ -43,13 +42,13 @@ public class PaperMessages implements Messages<Component> {
             message = message.trim();
 
         if (usePrefix)
-            return getPrefix().append(mm.deserialize(message));
+            return mm.deserialize(getPrefix() + message);
 
         return mm.deserialize(message);
     }
 
     @Override
-    public Component getPrefix() {
+    public String getPrefix() {
         return prefix;
     }
 
