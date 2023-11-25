@@ -10,7 +10,7 @@ public interface ItemBuilderBase<T> {
 
     ItemBuilderBase<?> displayName(T displayName);
 
-    ItemBuilderBase<?> lore(List<T> lore);
+    ItemBuilderBase<?> lore(T... lore);
 
     ItemBuilderBase<?> glow();
 

@@ -8,6 +8,7 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 import org.leiers.leplugin.api.item.ItemBuilderBase;
 
+import java.util.Arrays;
 import java.util.List;
 
 public class ItemBuilder implements ItemBuilderBase<Component> {
@@ -37,8 +38,8 @@ public class ItemBuilder implements ItemBuilderBase<Component> {
     }
 
     @Override
-    public ItemBuilder lore(List<Component> lore) {
-        this.meta.lore(lore);
+    public ItemBuilder lore(Component... lore) {
+        this.meta.lore(Arrays.stream(lore).toList());
         return this;
     }
 
