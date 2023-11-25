@@ -2,6 +2,7 @@ package org.leiers.leplugin.api;
 
 import org.bukkit.ChatColor;
 import org.bukkit.configuration.file.YamlConfiguration;
+import org.bukkit.event.Listener;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.leiers.leplugin.api.config.Config;
 import org.leiers.leplugin.api.config.Messages;
@@ -77,6 +78,11 @@ public abstract class LePluginBase extends JavaPlugin {
         getServer().getConsoleSender().sendMessage(ChatColor.BLUE + " |_____|  \\___| |_|     |_|  \\__,_|  \\__, | |_| |_| |_|");
         getServer().getConsoleSender().sendMessage(ChatColor.BLUE + "                                     |___/             ");
         getServer().getConsoleSender().sendMessage(ChatColor.GOLD + "          Visit https://leiers.org/leplugin");
+    }
+
+    protected final void registerEvents(Listener... listeners) {
+        for (Listener listener : listeners)
+            getServer().getPluginManager().registerEvents(listener, this);
     }
 
     public abstract Messages getText();
