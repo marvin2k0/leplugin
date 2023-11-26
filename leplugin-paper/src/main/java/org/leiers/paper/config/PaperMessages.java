@@ -22,7 +22,10 @@ public class PaperMessages implements Messages<Component> {
                 " ",
                 "This file exclusively supports MiniMessage formatting for messages.",
                 "Learn more about MiniMessages at:",
-                "https://docs.advntr.dev/minimessage/format.html#minimessage-format"
+                "https://docs.advntr.dev/minimessage/format.html#minimessage-format",
+                " ",
+                "You can verify preview your MiniMessage at:",
+                "https://webui.advntr.dev/"
         ));
         config.save();
     }
