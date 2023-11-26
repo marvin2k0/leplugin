@@ -9,7 +9,6 @@ import org.bukkit.inventory.meta.ItemMeta;
 import org.leiers.leplugin.api.item.ItemBuilderBase;
 
 import java.util.Arrays;
-import java.util.List;
 
 public class ItemBuilder implements ItemBuilderBase<Component> {
 
