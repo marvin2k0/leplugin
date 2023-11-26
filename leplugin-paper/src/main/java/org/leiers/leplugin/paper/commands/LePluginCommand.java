@@ -1,4 +1,4 @@
-package org.leiers.paper.commands;
+package org.leiers.leplugin.paper.commands;
 
 import org.bukkit.Bukkit;
 import org.leiers.leplugin.api.LePluginBase;

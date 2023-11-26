@@ -1,4 +1,4 @@
-package org.leiers.paper.config;
+package org.leiers.leplugin.paper.config;
 
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.minimessage.MiniMessage;
@@ -53,6 +53,14 @@ public class PaperMessages implements Messages<Component> {
     @Override
     public String getPrefix() {
         return prefix;
+    }
+
+    public Component getPrefixComponent() {
+        return mm.deserialize(getPrefix());
+    }
+
+    public Component combineWithPrefix(String text) {
+        return mm.deserialize(getPrefix() + text.trim());
     }
 
     @Override

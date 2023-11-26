@@ -1,4 +1,4 @@
-package org.leiers.paper.item;
+package org.leiers.leplugin.paper.item;
 
 import net.kyori.adventure.text.Component;
 import org.bukkit.Material;
