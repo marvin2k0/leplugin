@@ -12,15 +12,17 @@ import java.util.List;
 
 public abstract class LePluginBase extends JavaPlugin {
     private boolean showBanner = true;
+    private File messagesFile = new File(getDataFolder(), "messages.yml");
+
     private Config messagesConfig;
 
     @Override
     public final void onLoad() {
         this.prepareConfig();
-        this.createMessagesConfig();
         this.setup();
         this.hideBanner();
         this.loading();
+        this.createMessagesConfig(messagesFile);
     }
 
     @Override
@@ -43,6 +45,10 @@ public abstract class LePluginBase extends JavaPlugin {
         this.showBanner = false;
     }
 
+    protected void setMessagesFile(File file) {
+        this.messagesFile = file;
+    }
+
     private void prepareConfig() {
         if (getResource("config.yml") == null)
             saveConfig();
@@ -61,9 +67,7 @@ public abstract class LePluginBase extends JavaPlugin {
         saveConfig();
     }
 
-    private void createMessagesConfig() {
-        final File messagesFile = new File(getDataFolder(), "messages.yml");
-
+    private void createMessagesConfig(File messagesFile) {
         if (getResource("messages.yml") != null && !messagesFile.exists())
             saveResource("messages.yml", false);
 
