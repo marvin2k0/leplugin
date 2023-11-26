@@ -19,10 +19,10 @@ public abstract class LePluginBase extends JavaPlugin {
     @Override
     public final void onLoad() {
         this.prepareConfig();
-        this.setup();
         this.hideBanner();
         this.loading();
         this.createMessagesConfig(messagesFile);
+        this.setup();
     }
 
     @Override
@@ -68,7 +68,7 @@ public abstract class LePluginBase extends JavaPlugin {
     }
 
     private void createMessagesConfig(File messagesFile) {
-        if (getResource("messages.yml") != null && !messagesFile.exists())
+        if (getResource(messagesFile.getName()) != null && !messagesFile.exists())
             saveResource("messages.yml", false);
 
         this.messagesConfig = new Config(YamlConfiguration.loadConfiguration(messagesFile), messagesFile);
