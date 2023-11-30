@@ -1,5 +1,6 @@
 package org.leiers.leplugin.api;
 
+import lombok.Getter;
 import org.bukkit.ChatColor;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.event.Listener;
@@ -14,6 +15,7 @@ public abstract class LePluginBase extends JavaPlugin {
     private boolean showBanner = true;
     private File messagesFile = new File(getDataFolder(), "messages.yml");
 
+    @Getter
     private Config messagesConfig;
 
     @Override
@@ -89,11 +91,7 @@ public abstract class LePluginBase extends JavaPlugin {
             getServer().getPluginManager().registerEvents(listener, this);
     }
 
-    public abstract Messages getText();
-
-    public Config getMessagesConfig() {
-        return this.messagesConfig;
-    }
+    public abstract Messages<?> getMessages();
 
     protected void setup() {
     }
